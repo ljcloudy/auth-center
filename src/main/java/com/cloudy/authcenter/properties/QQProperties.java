@@ -3,7 +3,7 @@ package com.cloudy.authcenter.properties;
 /**
  * Created by ljy_cloudy on 2018/10/13.
  */
-public class QQProperties extends SocialProperties {
+public class QQProperties extends BaseSocialProperties {
 
     private String providerId = "qq";
 

@@ -1,6 +1,7 @@
 package com.cloudy.authcenter.social.weixin.connect;
 
-import com.cloudy.security.core.social.weixin.api.Weixin;
+
+import com.cloudy.authcenter.social.weixin.api.Weixin;
 import org.springframework.social.connect.support.OAuth2ConnectionFactory;
 
 /**

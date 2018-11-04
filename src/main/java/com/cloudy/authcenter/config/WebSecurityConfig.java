@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+import org.springframework.social.security.SpringSocialConfigurer;
 
 /**
  * Created by ljy_cloudy on 2018/10/27.
@@ -34,12 +35,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
     @Autowired
     private ValidateCodeSecurityConfig validateCodeSecurityConfig;
+    @Autowired
+    private SpringSocialConfigurer springSocialConfigurer;
 
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.apply(validateCodeSecurityConfig).and()
-
+        http
+                .apply(springSocialConfigurer).and()
+                .apply(validateCodeSecurityConfig)
+                .and()
                 .apply(smsCodeAuthenticationSecurityConfig)
                 .and()
                 .formLogin().permitAll()

@@ -1,6 +1,5 @@
 package com.cloudy.authcenter.social;
 
-import com.cloudy.security.core.social.CloudySpringSocialConfigurer;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
